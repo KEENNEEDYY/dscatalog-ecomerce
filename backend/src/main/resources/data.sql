@@ -54,3 +54,17 @@ INSERT INTO tb_product_category (product_id, category_id) VALUES (22, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (23, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (24, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (25, 3);
+
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Maria Silva','12345678901',6500.0,TIMESTAMP WITH TIME ZONE '1994-07-20T10:30:00Z',2);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Kennedy Leocadio','11238426828',2500.0,TIMESTAMP WITH TIME ZONE '1992-06-23T00:00:00Z',0);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Rachael Villanueva','11238428002',2881.0,TIMESTAMP WITH TIME ZONE '1981-07-11T00:00:00Z',1);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Tristen Mcgrath','11238430459',2918.0,TIMESTAMP WITH TIME ZONE '2000-09-09T00:00:00Z',8);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Fletcher Lowery','11804653825',2981.0,TIMESTAMP WITH TIME ZONE '1992-07-12T00:00:00Z',8);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Aarav Rivas','11805654174',3331.0,TIMESTAMP WITH TIME ZONE '1990-08-24T00:00:00Z',0);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Curtis Mckay','11805654347',3709.0,TIMESTAMP WITH TIME ZONE '1985-08-19T00:00:00Z',8);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Darryl Everett','19142481683',4103.0,TIMESTAMP WITH TIME ZONE '1996-11-12T00:00:00Z',8);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Brynn Huffman','19142482098',4331.0,TIMESTAMP WITH TIME ZONE '1985-01-03T00:00:00Z',9);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Martin Salazar','20477954094',4592.0,TIMESTAMP WITH TIME ZONE '1998-03-16T00:00:00Z',1);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Lukas Cordova','20478955782',4966.0,TIMESTAMP WITH TIME ZONE '1981-07-11T00:00:00Z',0);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Mikaela Noble','21814424106',4974.0,TIMESTAMP WITH TIME ZONE '1995-02-22T00:00:00Z',8);
+INSERT INTO tb_client(name,cpf,income,birth_date,children) VALUES('Anya Gibbs','21914428179',4990.0,TIMESTAMP WITH TIME ZONE '1981-06-25T00:00:00Z',2);
