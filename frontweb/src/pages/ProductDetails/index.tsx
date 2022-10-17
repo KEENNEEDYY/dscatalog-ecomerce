@@ -33,15 +33,7 @@ const ProductDetails = () => {
                 ullam explicabo, velit ex minus rem? Molestiae quas fugit
                 asperiores commodi magni corporis quis dolor aspernatur,
                 accusantium aperiam assumenda rem minima, sapiente totam
-                inventore pariatur id alias. Facere saepe ullam obcaecati veniam
-                vel aut, repellendus, fuga omnis officiis, nisi corrupti ad. Non
-                consequatur voluptas iste asperiores illum voluptatibus,
-                accusantium hic similique corrupti eos voluptatem reiciendis
-                tenetur facere quae minima quam sed assumenda quas aperiam atque
-                quod reprehenderit numquam placeat. Tempora nemo, possimus
-                labore recusandae nihil quaerat obcaecati quibusdam praesentium,
-                voluptatum deserunt dolorum, consectetur iste exercitationem
-                repudiandae sunt, reprehenderit magnam accusamus.
+                inventore pariatur id alias.
               </p>
             </div>
           </div>
