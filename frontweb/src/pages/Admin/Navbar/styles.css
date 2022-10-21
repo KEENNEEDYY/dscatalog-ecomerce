@@ -13,14 +13,15 @@ ul {
 }
 
 .admin-nav-item{
+    min-width: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50px;
-    background-color: #F2F2F2;
+    background-color: white;
     border-radius: 100px;
     padding: 0 10px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     letter-spacing: -0.015em;
     color: #9E9E9E;
@@ -33,4 +34,53 @@ ul {
 
 .admin-nav-item p{
     margin-bottom: 0;
+}
+
+@media (min-width: 420px) {
+    .admin-nav-item{
+        min-width: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        background-color: white;
+        border-radius: 100px;
+        padding: 0 10px;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: -0.015em;
+        color: #9E9E9E;
+    }
+    
+}
+
+@media (min-width: 762px) {
+    .admin-nav-item{
+        min-width: 220px;
+    }
+    
+}
+
+@media(min-width: 1200px) {
+    .admin-nav-container{
+        padding: 0;
+        width: 300px;
+        height: calc(100vh - 70px);
+    }
+    
+    .admin-nav-container ul{
+        padding-left: unset;
+        justify-content: unset;
+        flex-direction: column;
+    }
+
+    .admin-nav-item{
+        border-radius: 0;
+        font-size: 18px;
+        height: 80px;
+        border-bottom: 1px solid #E1E1E1;
+        justify-content: flex-start;
+        padding-left: 40px;
+    }
+
 }
