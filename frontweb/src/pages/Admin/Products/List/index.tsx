@@ -16,6 +16,14 @@ const List = () => {
             {
                 "id": 2,
                 "name": "Eletrônicos"
+            },
+            {
+                "id": 3,
+                "name": "Computadores"
+            },
+            {
+                "id": 1,
+                "name": "Celulares"
             }
         ]
     }
