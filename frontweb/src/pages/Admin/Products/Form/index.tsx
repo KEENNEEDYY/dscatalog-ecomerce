@@ -13,7 +13,10 @@ const Form = () => {
 
     const onSubmit = (product : Product) => {
 
-        const data = {...product,imgURL: "https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/4-big.jpg", categories: [{id: 3, name: ""}]}
+        const data = {...product, 
+                        imgUrl: "https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/4-big.jpg", 
+                        categories: [{id: 3, name: ""}]
+                     }
 
         const config: AxiosRequestConfig = {
             method: 'POST',
@@ -25,6 +28,8 @@ const Form = () => {
             .then((response) => {
                 console.log(response.data);
             });
+        
+        history.push("/admin/products");   
     };
     
     const handleCancel = () => {
