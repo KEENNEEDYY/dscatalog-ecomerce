@@ -1,6 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router-dom';
 import Select from   'react-select';
 import { Category } from 'types/Category';
@@ -23,7 +23,7 @@ type UrlParams = {
 
     const [selectCategories, setSelectCategories] = useState<Category[]>([]);
 
-    const { register, handleSubmit, formState: {errors}, setValue } = useForm<Product>();
+    const { register, handleSubmit, formState: {errors}, setValue, control } = useForm<Product>();
 
     useEffect( () => {
         requestBackend({url: '/categories'})
@@ -88,10 +88,16 @@ type UrlParams = {
                             </div>
 
                             <div className="margin-botton-30">
-                                <Select options={selectCategories} isMulti classNamePrefix="product-crud-select" 
+                                <Controller name='categories' rules={{required: true}} control={control} render={({field}) => (
+                                   <Select {...field}
+                                    options={selectCategories} isMulti classNamePrefix="product-crud-select" 
                                     getOptionLabel={(category: Category) => category.name} 
                                     getOptionValue={(category: Category) => String(category.id)}
-                                />
+                                    /> 
+                                )}/>
+                                {errors.categories && (
+                                    <div className="invalid-feedback d-block"> Campo Obrigatório </div>
+                                )}
                             </div>
 
                             <div className="margin-botton-30">
