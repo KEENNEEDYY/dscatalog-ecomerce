@@ -48,15 +48,10 @@ type UrlParams = {
 
     const onSubmit = (product : Product) => {
 
-        const data = {...product, 
-                        imgUrl: isEditing ? product.imgUrl : "https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/4-big.jpg", 
-                        categories: isEditing ? product.categories : [{id: 3, name: ""}],
-                     }
-
         const config: AxiosRequestConfig = {
             method: isEditing ? 'PUT' : 'POST',
             url: isEditing ? `/products/${productId}` : "/products",
-            data,
+            data: product,
             withCredentials: true,
         };
         requestBackend(config)
@@ -108,6 +103,19 @@ type UrlParams = {
                                 />
                                 <div className="invalid-feedback d-block"> {errors.price?.message} </div>
                             </div>
+                            <div className="margin-botton-30">
+                                <input 
+                                    {...register('imgUrl', {required: 'Campo obrigatório',
+                                        pattern: {
+                                            value: /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/gm,
+                                            message: 'Deve ser uma URL válida!'
+                                        }  
+                                    })}
+                                    className={`form-control base-input ${errors.imgUrl ? 'is-invalid': ''}`}
+                                    name="imgUrl"
+                                    type="text" />
+                            </div>
+                            <div className="invalid-feedback d-block">{errors.imgUrl?.message}</div>
                         </div>
                         <div className="col-lg-6">
                             <div>
