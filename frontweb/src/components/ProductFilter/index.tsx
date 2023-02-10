@@ -56,7 +56,7 @@ const ProductFilter = () => {
                             )}
                         />
                     </div>
-                    <button className="btn btn-outline-secondary btn-product-filter-clear">LIMPAR <span className="btn-product-filtro-word">FILTRO</span></button>
+                    <button className="btn btn-outline-secondary btn-product-filter-clear">LIMPAR <span className="btn-product-filtro-word">FILTRO</span> </button>
                 </div>
             </form>
         </div>
