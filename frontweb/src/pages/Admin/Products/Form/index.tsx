@@ -4,6 +4,7 @@ import CurrencyInput from 'react-currency-input-field';
 import { useForm, Controller } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router-dom';
 import Select from   'react-select';
+import { toast } from 'react-toastify';
 import { Category } from 'types/Category';
 import { Product } from 'types/products';
 import { requestBackend } from 'util/requests';
@@ -59,10 +60,11 @@ type UrlParams = {
         };
         requestBackend(config)
             .then((response) => {
-                console.log(response.data);
-            });
-        
-        history.push("/admin/products");   
+                toast.info("Produto salvo com sucesso!");
+                history.push("/admin/products");
+            }).catch( () => {
+                toast.error("Erro ao cadastrar o Produto");
+            });   
     };
     
     const handleCancel = () => {
@@ -117,9 +119,11 @@ type UrlParams = {
                                     {...register('imgUrl', {required: 'Campo obrigatório',
                                         pattern: {
                                             value: /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/gm,
-                                            message: 'Deve ser uma URL válida!'
+                                            message: 'Deve ser uma URL válida!',
+                                            
                                         }  
                                     })}
+                                    placeholder="URL"
                                     className={`form-control base-input ${errors.imgUrl ? 'is-invalid': ''}`}
                                     name="imgUrl"
                                     type="text" />
