@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 
 describe('Pagination test', () => {
     test('should render Pagination element', () => {
-        
+
         const pageCount = 3;
         const range = 3;
 
@@ -28,7 +28,7 @@ describe('Pagination test', () => {
 
         expect(page3).toBeInTheDocument();
         expect(page3).not.toHaveClass("pagination-link-active");
-        
+
         expect(page4).not.toBeInTheDocument();
     });
 });
