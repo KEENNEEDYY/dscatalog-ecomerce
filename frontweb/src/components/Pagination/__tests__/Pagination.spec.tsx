@@ -1,8 +1,10 @@
 import Pagination from "..";
 
 import { render, screen } from "@testing-library/react";
+import userEvent  from "@testing-library/user-event";
 
 describe('Pagination test', () => {
+
     test('should render Pagination element', () => {
 
         const pageCount = 3;
@@ -28,7 +30,66 @@ describe('Pagination test', () => {
 
         expect(page3).toBeInTheDocument();
         expect(page3).not.toHaveClass("pagination-link-active");
-
+        
         expect(page4).not.toBeInTheDocument();
     });
+
+    test('next arrow should call onChange', () => {
+
+        const pageCount = 3;
+        const range = 3;
+        const onChange = jest.fn();
+
+        render(
+            <Pagination 
+                pageCount={pageCount}
+                range={range}
+                onChange={onChange}
+            />
+        ); 
+
+        const arrowNext = screen.getByTestId("arrow-next");
+
+        userEvent.click(arrowNext);
+        expect(onChange).toHaveBeenCalledWith(1);
+    });
+
+    test('previous arrow should call onChange', () => {
+
+        const pageCount = 3;
+        const range = 3;
+        const onChange = jest.fn();
+        const forcePage = 1;
+
+        render(
+            <Pagination 
+                pageCount={pageCount}
+                range={range}
+                onChange={onChange}
+                forcePage={forcePage}
+            />
+        ); 
+
+        const arrowPrevious = screen.getByTestId("arrow-previous");
+
+        userEvent.click(arrowPrevious);
+        expect(onChange).toHaveBeenCalledWith(0);
+    });
+
+    test('page link should call onChange', () => {
+
+        const pageCount = 3;
+        const range = 3;
+        const onChange = jest.fn();
+
+        render(
+            <Pagination pageCount={pageCount} range={range} onChange={onChange} />
+        );
+
+        const page3 = screen.getByText("3");
+
+        userEvent.click(page3);
+        expect(onChange).toHaveBeenCalledWith(2);
+    });
+    
 });
