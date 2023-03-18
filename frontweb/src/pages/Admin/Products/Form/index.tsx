@@ -80,19 +80,21 @@ type UrlParams = {
                         <div className="col-lg-6 product-crud-inputs-left-container">
                             <div className="margin-botton-30">
                                 <input 
+                                    data-testid="name"
                                     {...register('name', { required: 'Campo obrigatório'})}
                                     className={`form-control base-input ${ errors.name ? 'is-invalid': '' } `}
                                     type="text" placeholder= "Nome do produto" name="name"
                                 />
                                 <div className="invalid-feedback d-block"> {errors.name?.message} </div>
                             </div>
-
                             <div className="margin-botton-30">
+                                <label htmlFor="categories" className="d-none">Categorias</label>
                                 <Controller name='categories' rules={{required: true}} control={control} render={({field}) => (
                                    <Select {...field}
                                     options={selectCategories} isMulti classNamePrefix="product-crud-select" 
                                     getOptionLabel={(category: Category) => category.name} 
                                     getOptionValue={(category: Category) => String(category.id)}
+                                    inputId="categories"
                                     /> 
                                 )}/>
                                 {errors.categories && (
@@ -103,6 +105,7 @@ type UrlParams = {
                             <div className="margin-botton-30">
                                 <Controller name="price" rules={{required: 'Campo obrigatório'}} control={control} render={ ({field}) => (
                                     <CurrencyInput 
+                                        data-testid="price"
                                         placeholder='Preço'
                                         className={`form-control base-input ${ errors.name ? 'is-invalid' : '' }`}
                                         disableGroupSeparators={true}
@@ -126,6 +129,7 @@ type UrlParams = {
                                     placeholder="URL"
                                     className={`form-control base-input ${errors.imgUrl ? 'is-invalid': ''}`}
                                     name="imgUrl"
+                                    data-testid="imgUrl"
                                     type="text" />
                             </div>
                             <div className="invalid-feedback d-block">{errors.imgUrl?.message}</div>
@@ -135,7 +139,7 @@ type UrlParams = {
                                 <textarea 
                                     {...register('description', {required: 'Campo obrigatório'})}
                                     className={`form-control base-input h-auto ${errors.description ? 'is-invalid':''}`}
-                                    name="description" rows={10} placeholder="Descrição"/>
+                                    name="description" rows={10} placeholder="Descrição" data-testid="description"/>
                             </div>
                             <div className="invalid-feedback d-block" >{errors.description?.message}</div>
                         </div>
