@@ -45,7 +45,7 @@ const findCategoriesResponse = {
       empty: false,
     };
 
-    const productResponse = {
+    export const productResponse = {
         id: 2,
         name: 'Smart TV',
         description:
@@ -78,5 +78,11 @@ export const server = setupServer(
             ctx.status(200),
             ctx.json(productResponse)
         )
+    }),
+    rest.put( `${BASE_URL}/products/:productId`, (req, res, ctx) => {
+      return res(ctx.status(200), ctx.json(productResponse));
+    }),
+    rest.get(`${BASE_URL}/products/:productId`, (req, res, ctx) => {
+      return res(ctx.status(200), ctx.json(productResponse));
     })
 );
