@@ -98,7 +98,7 @@ type UrlParams = {
                                     /> 
                                 )}/>
                                 {errors.categories && (
-                                    <div className="invalid-feedback d-block"> Campo Obrigatório </div>
+                                    <div className="invalid-feedback d-block"> Campo obrigatório </div>
                                 )}
                             </div>
 
