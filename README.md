@@ -59,7 +59,7 @@ Pré-requisitos: Java 17
 
 ```
 ## clonar repositório
-git clone https://github.com/KEENNEEDYY/dscatalog-homolog.git
+git clone https://github.com/KEENNEEDYY/dscatalog-ecomerce.git
 
 ## entrar na pasta do projeto back end
 cd backend
@@ -74,7 +74,7 @@ Pré-requisitos: npm / yarn
 
 ```
 ## clonar repositório
-git clone https://github.com/KEENNEEDYY/dscatalog-homolog.git
+git clone https://github.com/KEENNEEDYY/dscatalog-ecomerce.git
 
 ## entrar na pasta do projeto front end web
 cd frontweb
